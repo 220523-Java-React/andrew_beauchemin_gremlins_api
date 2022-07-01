@@ -23,3 +23,5 @@ create table gremlins(
 )
 
 select * from color
+
+select * from gremlins
