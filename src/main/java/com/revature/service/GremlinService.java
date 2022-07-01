@@ -10,6 +10,6 @@ public class GremlinService {
 
     public  List<Gremlin> getAllGremlins(){return gremlinRepository.getAll();}
 
-    public Gremlin createGremlin(Gremlin gremlin){return gremlinRepository.create(gremlin);};
+    public boolean createGremlin(Gremlin gremlin){return gremlinRepository.create(gremlin);};
 
 }

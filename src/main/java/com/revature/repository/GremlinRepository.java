@@ -33,7 +33,7 @@ public class GremlinRepository implements DAO<Gremlin> {
     }
 
     @Override
-    public Gremlin create(Gremlin gremlin) {
+    public boolean create(Gremlin gremlin) {
         try(Connection connection = ConnectionUtility.getConnection()) {
             PreparedStatement stmt = connection.prepareStatement("insert into gremlins(name, age, color_id, is_evil) values(?, ?, ?, ?)");
 
@@ -43,12 +43,12 @@ public class GremlinRepository implements DAO<Gremlin> {
             stmt.setBoolean(4, gremlin.isEvil());
 
             int success = stmt.executeUpdate();
-            return success == 1 ? gremlin : null;
+            return success == 1;
 
         }catch (SQLException e){
             e.printStackTrace();
         }
 
-        return null;
+        return false;
     }
 }
