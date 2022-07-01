@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Gremlin {
     private String name;
     private Integer age;
-    private Integer colorId;
+    private Color color;
     private boolean isEvil;
 
     public String getName() {
@@ -26,12 +26,12 @@ public class Gremlin {
         return this;
     }
 
-    public Integer getColorId() {
-        return colorId;
+    public Color getColor() {
+        return color;
     }
 
-    public Gremlin setColorId(Integer colorId) {
-        this.colorId = colorId;
+    public Gremlin setColor(Color color) {
+        this.color = color;
         return this;
     }
 
@@ -49,12 +49,12 @@ public class Gremlin {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Gremlin gremlin = (Gremlin) o;
-        return isEvil == gremlin.isEvil && Objects.equals(name, gremlin.name) && Objects.equals(age, gremlin.age) && Objects.equals(colorId, gremlin.colorId);
+        return isEvil == gremlin.isEvil && Objects.equals(name, gremlin.name) && Objects.equals(age, gremlin.age) && color == gremlin.color;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, colorId, isEvil);
+        return Objects.hash(name, age, color, isEvil);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Gremlin {
         return "Gremlin{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", colorId=" + colorId +
+                ", color=" + color +
                 ", isEvil=" + isEvil +
                 '}';
     }

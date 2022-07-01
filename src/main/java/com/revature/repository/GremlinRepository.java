@@ -18,7 +18,7 @@ public class GremlinRepository implements DAO<Gremlin> {
 
             while (rs.next()){
                 Gremlin gremlin = new Gremlin().setAge(rs.getInt("age"))
-                        .setColorId(rs.getInt("color_id"))
+                        .setColor(Color.values()[rs.getInt("color_id")])
                         .setEvil(rs.getBoolean("is_evil"))
                         .setName(rs.getString("name"));
 
@@ -39,7 +39,7 @@ public class GremlinRepository implements DAO<Gremlin> {
 
             stmt.setString(1, gremlin.getName());
             stmt.setInt(2, gremlin.getAge());
-            stmt.setInt(3, gremlin.getColorId());
+            stmt.setInt(3, gremlin.getColor().ordinal());
             stmt.setBoolean(4, gremlin.isEvil());
 
             int success = stmt.executeUpdate();
