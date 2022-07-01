@@ -21,6 +21,9 @@ dependencies {
 
     // javalin
     implementation group: 'io.javalin', name: 'javalin', version: '4.6.3'
+
+    //to stop annoying me
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.8.0-beta4'
 }
 
 test {

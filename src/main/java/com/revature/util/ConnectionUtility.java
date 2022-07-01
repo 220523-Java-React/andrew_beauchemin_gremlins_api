@@ -14,7 +14,7 @@ public class ConnectionUtility {
     private ConnectionUtility(){}
 
     public static Connection getConnection() throws SQLException {
-        if(connection.isClosed() || connection == null){
+        if(connection == null || connection.isClosed()){
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         }
 
